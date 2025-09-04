@@ -3,11 +3,17 @@
 using namespace std;
 
 vector<long long> productExceptIndex(const vector<int>& arr) {
-    int size = arr.size();
+    int size = arr.size();int product = 1;
     vector<long long> output(size, 1);
-
-    // TODO: complete the function as per instructions
+    for(int i =0;i<size;i++){
+      product=1;
+      for(int j=0;j<size;j++){
+        if(i!=j)product*=arr[j];
+      }
+      output[i] = product;
+    }
     
+    return output;
 }
 
 int main() {
@@ -22,4 +28,3 @@ int main() {
 
     return 0;
 }
-
